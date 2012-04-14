@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="life.Jtomat">
+  <grid id="27dc6" binding="areaPanel" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="927" height="706"/>
+    </constraints>
+    <properties/>
+    <border type="empty">
+      <font/>
+    </border>
+    <children>
+      <component id="86e99" class="life.view.CellsPanel" binding="cellsPanel" custom-create="true">
+        <constraints>
+          <grid row="0" column="0" row-span="6" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="500" height="500"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <hspacer id="b867a">
+        <constraints>
+          <grid row="0" column="1" row-span="6" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="7" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="fcd82">
+        <constraints>
+          <grid row="0" column="3" row-span="6" col-span="1" vsize-policy="1" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="20" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <vspacer id="7b722">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="84e63" binding="graph" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="line" title="changes graph">
+          <color swing-color="Table.gridColor"/>
+        </border>
+        <children>
+          <component id="16dad" class="life.view.GraphPanel" binding="graphPanel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="300" height="100"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="fe4cc" binding="control" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="line" title="control">
+          <color swing-color="Table.gridColor"/>
+        </border>
+        <children>
+          <component id="f2b10" class="javax.swing.JCheckBox" binding="useCustomFigureCheckBox" default-binding="true">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="use custom figure"/>
+            </properties>
+          </component>
+          <component id="5bed" class="javax.swing.JButton" binding="start">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="70" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="start"/>
+            </properties>
+          </component>
+          <component id="6177" class="javax.swing.JTextField" binding="ruleField">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="23/3"/>
+            </properties>
+            <clientProperties>
+              <caretAspectRatio class="java.lang.Float" value="0.04"/>
+            </clientProperties>
+          </component>
+          <component id="f81ba" class="javax.swing.JButton" binding="reset">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="70" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="reset"/>
+            </properties>
+          </component>
+          <component id="3a1c8" class="javax.swing.JComboBox" binding="figureBox" custom-create="true">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="17d52" binding="figurePanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="line" title="create figure">
+          <color swing-color="Table.gridColor"/>
+        </border>
+        <children>
+          <component id="4cceb" class="life.view.FigurePanel" binding="figureCanvas">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

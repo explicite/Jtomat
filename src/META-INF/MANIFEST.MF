@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: life.Jtomat
+Created-By: Jan Paw
+Specification-Title: Jtomat
+Implementation-Version: alpha
