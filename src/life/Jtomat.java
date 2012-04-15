@@ -39,7 +39,7 @@ public class Jtomat extends JFrame {
         dimension = new Dimension(300, 300);
         jtomatModel = new JtomatModel(dimension, 100);
         cellsPanel = new CellsPanel(dimension, 2, jtomatModel);
-        figureBox = new JComboBox<String>(data);
+        figureBox = new JComboBox(data);
         figureCanvas = new FigurePanel();
     }
 
