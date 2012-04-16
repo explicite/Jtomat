@@ -57,9 +57,8 @@ public class JtomatModel extends Observable {
         for (int i = 0; i < dimension.getHeight(); i++)
             System.arraycopy(nextArea[i], 0, area[i], 0, dimension.getWidth());
 
-        if (!cells.isEmpty()) {
+        if (!cells.isEmpty())
             sendUpdate(cells);
-        } else stop();
     }
 
     public int getPopulationSize() {
@@ -209,7 +208,7 @@ public class JtomatModel extends Observable {
                     }
                 }
                 try {
-                    TimeUnit.MILLISECONDS.sleep(500);
+                    TimeUnit.MILLISECONDS.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
