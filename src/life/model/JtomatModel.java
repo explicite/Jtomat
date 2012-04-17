@@ -24,7 +24,6 @@ public class JtomatModel extends Observable {
     private final ModelThread modelThread;
     private Rule rule;
 
-
     public JtomatModel(Dimension dimension, int stepTime) {
         this.dimension = dimension;
         this.area = new boolean[dimension.getHeight()][dimension.getWidth()];

@@ -3,8 +3,15 @@ package life.view;
 import life.cell.Cell;
 import life.model.JtomatModel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.RenderedImage;
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.Observable;
 import java.util.Observer;
@@ -20,6 +27,8 @@ public class CellsPanel extends JPanel implements Observer {
     private int cellSize;
     private JtomatModel jtomatModel;
     private CellAreaCanvas cellAreaCanvas;
+    private Image offScreen;
+    private DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 
     public CellsPanel(life.cell.Dimension dimension, final int cellSize, final JtomatModel jtomatModel) {
         this.dimension = new life.cell.Dimension(dimension.getWidth() * cellSize, dimension.getHeight() * cellSize);
@@ -53,11 +62,20 @@ public class CellsPanel extends JPanel implements Observer {
         @Override
         public void update(Graphics g) {
             Graphics offGraphics;
-            Image offScreen;
+            offScreen = null;
             offScreen = createImage(getWidth(), getHeight());
             offGraphics = offScreen.getGraphics();
             paint(offGraphics);
             g.drawImage(offScreen, 0, 0, this);
+        }
+    }
+
+    public void takeScreen() {
+        try {
+            Date date = new Date();
+            ImageIO.write((RenderedImage) offScreen, "png", new File(dateFormat.format(date)));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

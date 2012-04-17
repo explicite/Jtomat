@@ -31,9 +31,10 @@ public class Jtomat extends JFrame {
     private JComboBox figureBox;
     private JPanel figurePanel;
     private FigurePanel figureCanvas;
+    private JButton screenButton;
     private JtomatModel jtomatModel;
     private Dimension dimension;
-    private String[] data = {"23/3", "45678/3", "2345/45678", "245/368", "34678/3678"};
+    private String[] data = {"23/3", "1357/1357", "45678/3", "2345/45678", "245/368", "34678/3678"};
 
     private void createUIComponents() throws InterruptedException {
         dimension = new Dimension(300, 300);
@@ -45,6 +46,16 @@ public class Jtomat extends JFrame {
 
     public Jtomat(String title) throws HeadlessException {
         super(title);
+
+        screenButton.setEnabled(false);
+
+        screenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cellsPanel.takeScreen();
+            }
+        });
+
         figureBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,7 +113,10 @@ public class Jtomat extends JFrame {
     private void generate() {
         reset.setText("reset");
         reset.setActionCommand("reset");
-        jtomatModel.breathOfLife();
+        if (useCustomFigureCheckBox.isSelected())
+            jtomatModel.setStartFigure(figureCanvas.getGridArray());
+        else
+            jtomatModel.breathOfLife();
         graphPanel.reset();
     }
 
@@ -113,6 +127,7 @@ public class Jtomat extends JFrame {
             start.setText("resume");
             start.setActionCommand("resume");
             useCustomFigureCheckBox.setEnabled(true);
+            screenButton.setEnabled(true);
         } catch (InterruptedException e1) {
             e1.printStackTrace();
             pause();
@@ -120,6 +135,7 @@ public class Jtomat extends JFrame {
     }
 
     private void resume() {
+        screenButton.setEnabled(false);
         jtomatModel.start();
         start.setText("pause");
         start.setActionCommand("pause");
@@ -127,6 +143,7 @@ public class Jtomat extends JFrame {
     }
 
     private void reset() {
+        screenButton.setEnabled(false);
         pause();
         jtomatModel.setRule(new Rule(ruleField.getText()));
 
